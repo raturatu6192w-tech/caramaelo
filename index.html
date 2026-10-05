@@ -57,7 +57,63 @@ h2{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:1rem}
 .visit dd{color:var(--soft)}.visit dd a{color:var(--ink)}
 .box{background:var(--card);border:1px solid var(--line);padding:2rem}
 footer{background:var(--espresso);color:var(--latte);text-align:center;padding:2rem 1rem;font-size:.9rem}
-@media(max-width:780px){.hero .wrap,.concept,.visit{grid-template-columns:1fr}.hero .wrap{padding-top:3rem}.list{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}nav div{gap:.8rem;font-size:.85rem}section{padding:3.5rem 0}.shelf{max-width:340px}}
+@media(max-width:780px){
+  /* 1. Perbaikan Navigasi Atas */
+  nav .wrap {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  nav div {
+    gap: 1.2rem;
+    font-size: .85rem;
+  }
+
+  /* 2. Perbaikan Hero Section (Atas-Bawah) */
+  .hero .wrap {
+    grid-template-columns: 1fr; /* Mengubah kolom menjadi tunggal */
+    gap: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    text-align: center; /* Membuat teks rata tengah di HP */
+  }
+  .hero p {
+    margin: 1.6rem auto 2rem; /* Memosisikan paragraf di tengah */
+  }
+  .btn {
+    margin: 0.3rem; /* Memberikan jarak antar tombol saat menumpuk */
+  }
+
+  /* 3. Perbaikan Wadah Gambar (Shelf) */
+  .shelf {
+    max-width: 320px;
+    margin: 0 auto; /* Memosisikan bingkai gambar di tengah */
+  }
+  .shelf img {
+    aspect-ratio: 4/5;
+    object-fit: cover; /* Memastikan gambar terpotong rapi, bukan gepeng */
+  }
+
+  /* 4. Perbaikan Komponen Lainnya */
+  .concept, .visit {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .duo img:nth-child(2) {
+    margin-top: 0; /* Menghilangkan margin offset pada mobile */
+  }
+  .list {
+    grid-template-columns: 1fr;
+  }
+  .gal {
+    grid-template-columns: repeat(2, 1fr); /* Menampilkan 2 kolom gambar di HP */
+  }
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
